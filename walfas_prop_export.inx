@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <name>Prop Export</name>
+    <id>com.draco.walfas.prop_export</id>
+    <param name="tab" type="notebook">
+        <page name="option_tab" gui-text="Options">
+            <param name="prop_scale" type="string" gui-text="Prop Scale">200</param>
+            <param name="prop_dpi" type="float" min="1" max="1000000" precision="2" gui-text="Prop DPI">96</param>
+            <param name="export_scales" type="string" gui-text="Export Scale(s)">50, 100, 150, 200, 250, 300, 350, 400</param>
+            <param name="prop_name" type="string" gui-text="Prop Name">My Prop</param>
+            <param name="output_path" type="path" mode="folder" gui-text="Output Folder"></param>
+            <param name="overwrite" type="bool" gui-text="Overwrite Existing Exports">true</param>
+        </page>
+        <page name="help_tab" gui-text="Help">
+            <label appearance="header">Walfas Prop Exporter</label>
+            <label>Before using this extension, resize the page to fit your prop using the Document Properties (Ctrl + Shift + D)</label>
+            <label>When you click "Apply" to run the extension, an empty window will pop up while the extension is working.  Wait for it to close and you should find your exported props.</label>
+        </page>
+        <page name="about_tab" gui-text="About">
+            <label>Walfas Prop Exporter</label>
+            <label>Version 1.0.0</label>
+            <label>Developed by: SuperDragonite2172</label>
+            <label>Walfas Prop exporting made easy.</label>
+        </page>
+    </param>
+
+    <effect needs-live-preview="false">
+        <object-type>all</object-type>
+        <effects-menu>
+            <submenu name="Walfas"/>
+        </effects-menu>
+    </effect>
+    
+    <script>
+        <command location="inx" interpreter="python">walfas_prop_export.py</command>
+    </script>
+</inkscape-extension>
